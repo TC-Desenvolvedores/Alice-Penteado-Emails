@@ -11,7 +11,7 @@ Versão atualizada a partir do PDF `origem/Newsletter_Solitarios_Alice_Penteado.
 | Arquivo | Uso |
 |---------|-----|
 | `email.html` | HTML de trabalho (`imagens/...` + WebP) |
-| `email-rd.html` | **Importar no RD** — gerado após upload (ver abaixo) |
+| `email-rd.html` | **Importar no RD** — CDN aplicado |
 | `imagens-urls.yaml` | Mapa arquivo → URL CloudFront |
 | `imagens/` | Assets |
 | `origem/` | PDF fonte |
@@ -28,5 +28,8 @@ Sem links de preview/descadastro no HTML — padrão RD. Ver [`docs/variaveis-rd
    ```
 4. **Importar** no RD: **Criar e-mail → Importar com HTML → Email Marketing** — colar o conteúdo de `email-rd.html` ou publicar em Gist e usar URL raw.
 5. Assunto / preheader conforme `meta.yaml` → e-mail de teste.
+
+**URL raw (importar via URL no RD):**  
+`https://gist.githubusercontent.com/TiagoAFernandes/3746ed03848e1753b9fcec320cf81d5f/raw/email-rd.html`
 
 Checklist: [`docs/publicacao-rd-checklist.md`](../../docs/publicacao-rd-checklist.md).

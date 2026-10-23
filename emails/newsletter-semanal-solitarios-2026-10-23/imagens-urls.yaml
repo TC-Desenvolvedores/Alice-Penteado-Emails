@@ -1,14 +1,14 @@
-# Preencher após upload no RD (Playwright: .cursor/skills/rd-station-email-images-upload/SKILL.md)
-uploaded_at: null
+uploaded_at: 2026-10-23T20:11:00-03:00
 rd_account_id: 975793
 cdn_base: https://d335luupugsy2.cloudfront.net
 upload_via: landing-page-editor-temporario
-note: Rodar scripts/build_email_rd.py após preencher todas as URLs abaixo.
+landing_page_id: 9012250
+note: LP não foi salva; upload apenas para gerar URLs no CDN.
 
 files:
-  01_logo.png: ""
-  03_hero.jpg: ""
-  05_polaroid-coracao.png: ""
-  06_oval-diagonal.png: ""
-  08_polaroid-gota.png: ""
-  09_certificacao-gia.jpg: ""
+  01_logo.png: https://d335luupugsy2.cloudfront.net/cms/files/975793/1792797046/$1f93rj4xoyx
+  03_hero.jpg: https://d335luupugsy2.cloudfront.net/cms/files/975793/1792797046/$ly3fpz1t4z8
+  05_polaroid-coracao.png: https://d335luupugsy2.cloudfront.net/cms/files/975793/1792797046/$1o7f9j03swy
+  06_oval-diagonal.png: https://d335luupugsy2.cloudfront.net/cms/files/975793/1792797046/$k8589rt61pn
+  08_polaroid-gota.png: https://d335luupugsy2.cloudfront.net/cms/files/975793/1792797046/$lzs5wsrjbdj
+  09_certificacao-gia.jpg: https://d335luupugsy2.cloudfront.net/cms/files/975793/1792797046/$tq1elizldrb

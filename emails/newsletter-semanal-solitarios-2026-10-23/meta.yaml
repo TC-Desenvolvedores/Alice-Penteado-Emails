@@ -20,7 +20,7 @@ publicacao_rd:
   gerar_email_rd: python scripts/build_email_rd.py newsletter-semanal-solitarios-2026-10-23
   imagens_mapeamento: imagens-urls.yaml
   html_sem_preview_descadastro: true
-  imagens_publicadas: false
+  imagens_publicadas: true
   importacao_html: manual pelo usuario
-  importar_via_url_raw: null
+  importar_via_url_raw: https://gist.githubusercontent.com/TiagoAFernandes/3746ed03848e1753b9fcec320cf81d5f/raw/email-rd.html
   teste: enviar e-mail de teste antes do disparo
