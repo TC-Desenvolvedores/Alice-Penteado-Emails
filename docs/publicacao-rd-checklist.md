@@ -10,7 +10,7 @@ O agente prepara HTML, imagens no CDN e (opcional) URL pública para importaçã
 | `email-rd.html` | Mesmo HTML com `src` em CloudFront (conta RD) |
 | `imagens-urls.yaml` | Mapa arquivo → URL após upload Playwright |
 | `email-premailer.html` | (Opcional) CSS mais inline via biblioteca Python `premailer` |
-| URL raw (Gist) | Link para **Importar via URL** no RD |
+| URL raw | Link para **Importar via URL** no RD (`raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/...`) |
 
 ## Próximos passos (você)
 
@@ -26,7 +26,7 @@ O agente prepara HTML, imagens no CDN e (opcional) URL pública para importaçã
 2. Escolha **Importar com HTML** (novo editor / bee templates).
 3. Nome do e-mail + tipo **Email Marketing** → **Criar email**.
 4. No passo de importação, use **Importar via URL** e cole a **URL raw** que o agente informou no chat  
-   (formato `https://gist.githubusercontent.com/.../raw/....html`).  
+   (formato `https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/.../email-rd.html`).  
    Alternativa: colar o conteúdo de `email-rd.html` diretamente, se o RD oferecer colagem.
 5. Salve o rascunho após o HTML carregar.
 

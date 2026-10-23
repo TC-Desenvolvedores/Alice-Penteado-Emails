@@ -29,7 +29,7 @@ Sem links de preview/descadastro no HTML — padrão RD. Ver [`docs/variaveis-rd
 4. **Importar** no RD: **Criar e-mail → Importar com HTML → Email Marketing** — colar o conteúdo de `email-rd.html` ou publicar em Gist e usar URL raw.
 5. Assunto / preheader conforme `meta.yaml` → e-mail de teste.
 
-**URL raw (importar via URL no RD):**  
-`https://gist.githubusercontent.com/TiagoAFernandes/3746ed03848e1753b9fcec320cf81d5f/raw/email-rd.html`
+**URL raw (importar via URL no RD)** — repositório [TC-Desenvolvedores/Alice-Penteado-Emails](https://github.com/TC-Desenvolvedores/Alice-Penteado-Emails):  
+`https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/master/emails/newsletter-semanal-solitarios-2026-10-23/email-rd.html`
 
 Checklist: [`docs/publicacao-rd-checklist.md`](../../docs/publicacao-rd-checklist.md).

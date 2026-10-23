@@ -22,5 +22,6 @@ publicacao_rd:
   html_sem_preview_descadastro: true
   imagens_publicadas: true
   importacao_html: manual pelo usuario
-  importar_via_url_raw: https://gist.githubusercontent.com/TiagoAFernandes/3746ed03848e1753b9fcec320cf81d5f/raw/email-rd.html
+  importar_via_url_raw: https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/master/emails/newsletter-semanal-solitarios-2026-10-23/email-rd.html
+  importar_via_url_nota: Organizações GitHub não criam Gists novos; URL raw do repositório público TC-Desenvolvedores (equivalente ao Gist para o RD).
   teste: enviar e-mail de teste antes do disparo

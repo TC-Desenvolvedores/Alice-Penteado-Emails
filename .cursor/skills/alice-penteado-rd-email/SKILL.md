@@ -33,7 +33,7 @@ description: >-
 A. Organizar pasta + limpar links RD padrão em email.html
 B. Upload imagens (Playwright) → imagens-urls.yaml + email-rd.html
 C. (Opcional) Premailer Python (base_url=None) → email-premailer.html
-D. (Opcional) Gist público → URL raw para importação
+D. URL pública para importação: **raw** do repositório público `TC-Desenvolvedores/Alice-Penteado-Emails` (orgs GitHub não criam Gists novos; não usar gist pessoal)
 E. NÃO importar HTML no RD via Playwright (manual pelo usuário)
 ```
 
@@ -41,7 +41,7 @@ E. NÃO importar HTML no RD via Playwright (manual pelo usuário)
 
 Ao concluir o trabalho em uma peça, **sempre** encerrar a resposta com uma seção **「Próximos passos (você)」** em português, mesmo que o usuário não peça. Incluir no mínimo:
 
-1. **URL raw** para importar no RD (`email-rd.html` no Gist), ou instrução para colar `email-rd.html` se não houver Gist.
+1. **URL raw** `raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/.../email-rd.html` (após push), ou colar `email-rd.html` local.
 2. Caminho local dos arquivos (`emails/{slug}/...`).
 3. Fluxo RD resumido: Importar com HTML → Email Marketing → Criar email → Importar via URL.
 4. Conferências: imagens CloudFront; HTML **sem** preview/descadastro (padrão RD).
