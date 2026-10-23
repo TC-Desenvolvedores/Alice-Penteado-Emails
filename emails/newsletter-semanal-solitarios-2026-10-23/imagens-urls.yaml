@@ -3,7 +3,9 @@ rd_account_id: 975793
 cdn_base: https://d335luupugsy2.cloudfront.net
 upload_via: landing-page-editor-temporario
 landing_page_id: 9012250
-note: LP não foi salva; upload apenas para gerar URLs no CDN.
+note: >-
+  Upload legado via LP (antes de 2026-10-23). Novas peças devem usar
+  email-editor-beefree — docs/upload-imagens-editor-email-rd.md.
 
 files:
   01_logo.png: https://d335luupugsy2.cloudfront.net/cms/files/975793/1792797046/$1f93rj4xoyx

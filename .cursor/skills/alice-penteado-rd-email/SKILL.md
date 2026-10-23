@@ -24,14 +24,14 @@ description: >-
    - “Descadastrar” / cancelar inscrição / *|LINK_DESCADASTRO|*
    (RD Station já fornece preview e descadastro por padrão)
 5. meta.yaml + README.md da pasta + índice na raiz
-6. Upload imagens no RD → email-rd.html com URLs CloudFront
+6. Upload imagens no editor de e-mail RD (bloco Imagem) → email-rd.html com URLs CloudFront
 ```
 
 ## Pipeline do agente (automação)
 
 ```
 A. Organizar pasta + limpar links RD padrão em email.html
-B. Upload imagens (Playwright) → imagens-urls.yaml + email-rd.html
+B. Upload imagens no editor de e-mail (Playwright, Beefree) → imagens-urls.yaml + email-rd.html
 C. (Opcional) Premailer Python (base_url=None) → email-premailer.html
 D. URL pública para importação: **raw** do repositório público `TC-Desenvolvedores/Alice-Penteado-Emails` (orgs GitHub não criam Gists novos; não usar gist pessoal)
 E. NÃO importar HTML no RD via Playwright (manual pelo usuário)
@@ -55,8 +55,7 @@ Checklist completo: `docs/publicacao-rd-checklist.md`.
 Detalhes para o **usuário** (não automatizar import): `docs/publicacao-rd-checklist.md`.  
 Pipeline e pré-requisitos de outro desenvolvedor: `README.md` e `.cursor/rules/alice-penteado-rd-emails.mdc`.
 
-Upload automatizado de imagens (Playwright): `.cursor/skills/rd-station-email-images-upload/SKILL.md` e `scripts/playwright-rd-upload-email-images.js`.
-Referência LP: skill global `rd-station-landing-images-upload`.
+Upload automatizado de imagens (Playwright): `.cursor/skills/rd-station-email-images-upload/SKILL.md`, `docs/upload-imagens-editor-email-rd.md` e `scripts/playwright-rd-upload-email-images.js`. **Não** usar Landing Pages.
 
 ## MCP
 

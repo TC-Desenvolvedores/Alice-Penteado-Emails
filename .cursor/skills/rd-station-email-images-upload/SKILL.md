@@ -1,14 +1,19 @@
 ---
 name: rd-station-email-images-upload
 description: >-
-  Upload de imagens de e-mail HTML no RD Station Marketing via Playwright MCP:
-  intercepta POST S3, gera URLs CloudFront e atualiza email.html. Use ao publicar
-  assets da Alice Penteado (ou outro cliente RD) antes de importar HTML.
+  Upload de imagens de e-mail HTML no RD Station Marketing via Playwright MCP,
+  no editor de e-mail (Beefree): bloco Imagem, upload e URLs CloudFront.
+  Não usar Landing Pages. Use ao publicar assets da Alice Penteado antes de importar HTML.
 ---
 
-# Upload de imagens — E-mail RD Station (Playwright)
+# Upload de imagens — Editor de e-mail RD (Beefree)
 
-Baseado no fluxo validado de Landing Pages (`rd-station-landing-images-upload`). O upload no RD usa o mesmo modal `input#file` e bucket `rdstation-static.s3.amazonaws.com`.
+## Regra de ouro
+
+**Sempre** no **construtor de e-mail** (`/email/{id}/edit`, iframe `app.getbee.io`).  
+**Nunca** em Landing Pages para gerar URLs de campanhas de e-mail.
+
+Documentação detalhada e resultado do teste: `docs/upload-imagens-editor-email-rd.md`.
 
 ## Pré-requisitos
 
@@ -16,70 +21,60 @@ Baseado no fluxo validado de Landing Pages (`rd-station-landing-images-upload`).
 - Imagens em `emails/{slug}/imagens/`
 - Humano conclui login + 2FA em `accounts.rdstation.com` ou `app.rdstation.com.br`
 - Viewport **1920×1400**
+- Rascunho de e-mail com permissão de editar **Conteúdo** (recomendado: rascunho `[TC]` só para upload)
 
 ## Workflow
 
 ```
 1. Login (humano)
-2. Abrir editor de e-mail em rascunho (Importar HTML ou e-mail em branco → Editar conteúdo)
-3. Inserir componente Imagem temporário
-4. Para cada arquivo: Carregar imagem → setInputFiles → interceptar POST S3 → CloudFront
-5. Salvar mapeamento em imagens-urls.yaml
-6. Substituir src="imagens/..." em email.html
-7. Remover bloco imagem temporário; salvar rascunho (opcional)
+2. E-mails → Rascunhos → abrir campanha → Conteúdo → Editar
+   (URL: /email/{id}/edit)
+3. No iframe Beefree: arrastar bloco Imagem (sidebar) para linha vazia no stage
+4. Para cada arquivo: Procurar / Add image → upload → copiar URL
+5. Gravar imagens-urls.yaml
+6. python scripts/build_email_rd.py emails/{slug}
+7. (Opcional) Remover blocos Imagem temporários; não publicar LP
 ```
 
-## Captura da URL (obrigatório)
-
-Não confiar só no campo URL da UI. Interceptar:
+## Iframe Beefree
 
 ```javascript
-const CLOUDFRONT = "https://d335luupugsy2.cloudfront.net";
-function s3XmlToCloudFront(xml) {
-  const key = (xml.match(/<Key>([^<]+)<\/Key>/) || [])[1];
-  return key ? `${CLOUDFRONT}/${key}` : null;
-}
-const responsePromise = page.waitForResponse(
-  (r) => r.url().includes("rdstation-static.s3.amazonaws.com") && r.request().method() === "POST",
-  { timeout: 45000 }
-);
-// ... upload ...
-const body = await (await responsePromise).text();
-const url = s3XmlToCloudFront(body);
+const bee = page.frames().find((f) => f.url().includes("getbee.io"));
 ```
 
-Helper local: `scripts/rd-s3-key-to-cloudfront.js`
+| Ação | Seletor |
+|------|---------|
+| Arrastar Imagem | `[data-qa="sidebar-draggable"][aria-label="Imagem"]` → `.drop-target` |
+| Módulo no stage | `.module-box--image` |
+| Upload | **Procurar** ou **Add image** → `input[type="file"]` no iframe |
+| Painel | **DADOS DA IMAGEM** → campo **Url** |
 
-## Editor de e-mail (seletores)
+Preferir **mouse drag** se `dragTo` falhar entre frame e página.
 
-O canvas pode estar em iframe. Se o fluxo de LP funcionar no editor de e-mail:
+## Captura da URL (ordem)
 
-| Passo | Ação |
-|-------|------|
-| Abrir conteúdo | Relacionar → E-mail → rascunho → **Editar conteúdo** |
-| Componente | Arrastar **Imagem** para o corpo |
-| Upload | **Carregar imagem** → modal pai `input#file` |
-| Confirmar | `button.js-insert-image-by-url` (se visível) |
+1. Campo **Url** no painel do módulo Imagem (`cloudfront.net`).
+2. Atributo **`src`** do `<img>` do módulo selecionado.
+3. Interceptar POST `rdstation-static.s3.amazonaws.com` → `scripts/rd-s3-key-to-cloudfront.js`.
 
-Se o editor de e-mail usar outra UI, registrar seletores nesta skill após validação.
+Não confiar só na UI sem validar que a URL é CloudFront da conta.
 
-## Fallback validado — Alice Penteado (account `975793`)
+## Script de referência
 
-1. Abrir `https://app.rdstation.com.br/landing-pages/{id}/editar` (ex.: `9012250`).
-2. O editor **não usa iframe** nesta conta — seletores no `page` principal.
-3. Usar bloco `.bricks-image` existente ou arrastar componente **Imagem**.
-4. **Não clicar em Salvar** na LP após os uploads (só gerar URLs no CDN).
-5. Script de referência: `scripts/playwright-rd-upload-email-images.js` (corpo para `browser_run_code_unsafe`).
+`scripts/playwright-rd-upload-email-images.js` — corpo para `browser_run_code_unsafe` (parâmetros `emailEditUrl`, `imagesDir`, `files[]` no topo).
 
 ## Saída no repositório
 
 `emails/{slug}/imagens-urls.yaml`:
 
 ```yaml
-uploaded_at: 2026-10-22T...
+uploaded_at: 2026-10-23T...
+upload_via: email-editor-beefree
+email_draft_id: 23511919
 cdn_base: https://d335luupugsy2.cloudfront.net
+account_id: 975793
 files:
-  01_logo-topo.png: https://d335luupugsy2.cloudfront.net/cms/files/...
+  01_logo.png: https://d335luupugsy2.cloudfront.net/cms/files/...
 ```
 
 Atualizar `meta.yaml` com `imagens_publicadas: true`.
@@ -88,7 +83,6 @@ Atualizar `meta.yaml` com `imagens_publicadas: true`.
 
 | Skill | Uso |
 |-------|-----|
-| `alice-penteado-rd-email` | Estrutura de pastas + variáveis HTML |
-| `rd-station-email-images-upload` | Playwright + URLs |
-| `rd-station-landing-images-upload` | Referência LP (tenant Planeta) |
+| `alice-penteado-rd-email` | Estrutura de pastas + pipeline RD |
+| `rd-station-email-images-upload` | Playwright no editor de e-mail |
 | `optimize-images` | Comprimir antes do upload |

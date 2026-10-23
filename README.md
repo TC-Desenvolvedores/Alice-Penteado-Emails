@@ -18,6 +18,7 @@ emails/
 docs/
   variaveis-rd.md        # merge tags e boas práticas RD
   publicacao-rd-checklist.md
+  upload-imagens-editor-email-rd.md
 scripts/
   build_email_rd.py      # gera email-rd.html
   playwright-rd-upload-email-images.js
@@ -90,7 +91,7 @@ Como instalar MCPs depende da configuração da sua máquina/Cursor (Settings �
 | Skill | Função |
 |-------|--------|
 | `optimize-images` | Comprimir/redimensionar antes do upload |
-| `rd-station-landing-images-upload` | Referência do fluxo S3 → CloudFront (LP) |
+| `rd-station-landing-images-upload` | (Outros projetos LP; **não** usar para e-mail Alice) |
 
 O agente carrega skills pelo nome quando a tarefa combina; manter as globais instaladas evita improviso.
 
@@ -105,7 +106,7 @@ O agente carrega skills pelo nome quando a tarefa combina; manter as globais ins
 ### 6. Acesso RD Station (Alice Penteado)
 
 - Conta RD com permissão para **Landing Pages** e **E-mail Marketing** (upload de mídia usa o mesmo CDN).
-- Fluxo validado na conta **`975793`**, LP de trabalho **`9012250`** (só upload; **não salvar** a LP depois).
+- Upload de imagens: **editor de e-mail** (`/email/{id}/edit`, Beefree) — ver [`docs/upload-imagens-editor-email-rd.md`](docs/upload-imagens-editor-email-rd.md). **Não** usar Landing Pages.
 - Login e 2FA: **humano** no navegador controlado pelo Playwright; o agente não armazena senha no repositório.
 
 Não commitar `.env` com credenciais. Se usar automação de login em outros projetos, mantenha `.env` local e listado no `.gitignore`.
@@ -116,7 +117,7 @@ Não commitar `.env` com credenciais. Se usar automação de login em outros pro
 |------|--------|
 | CloudFront CDN | `https://d335luupugsy2.cloudfront.net` |
 | Padrão de path | `cms/files/975793/{timestamp}/{hash}` |
-| LP temporária (upload) | `https://app.rdstation.com.br/landing-pages/9012250/editar` |
+| Editor de e-mail (upload) | `https://app.rdstation.com.br/email/{id}/edit` |
 
 ---
 
@@ -124,7 +125,7 @@ Não commitar `.env` com credenciais. Se usar automação de login em outros pro
 
 1. **Entrada:** HTML (ou PDF/design) + imagens (ZIP ou pasta).
 2. **Agente:** cria `emails/{slug}/`, `email.html`, `meta.yaml`, remove preview/descadastro do HTML.
-3. **Upload:** Playwright → `imagens-urls.yaml` (URLs CloudFront).
+3. **Upload:** Playwright no **editor de e-mail** (bloco Imagem) → `imagens-urls.yaml` (URLs CloudFront).
 4. **Build:** `python scripts/build_email_rd.py emails/{slug}` → `email-rd.html`.
 5. **Publicação:** commit + push → URL `raw.githubusercontent.com` em `meta.yaml`.
 6. **Operador:** importar URL no RD, revisar, teste, disparo — [`docs/publicacao-rd-checklist.md`](docs/publicacao-rd-checklist.md).

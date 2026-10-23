@@ -20,7 +20,7 @@ Sem links de preview/descadastro no HTML — padrão RD. Ver [`docs/variaveis-rd
 
 ## Publicar no RD
 
-1. **Upload das imagens** — skill `rd-station-email-images-upload` + `scripts/playwright-rd-upload-email-images.js` (LP temporária, não salvar).
+1. **Upload das imagens** — editor de e-mail RD (bloco Imagem); ver `docs/upload-imagens-editor-email-rd.md` e skill `rd-station-email-images-upload`.
 2. Preencher **`imagens-urls.yaml`** com as URLs CloudFront (uma por arquivo listado).
 3. Gerar HTML para o RD:
    ```bash

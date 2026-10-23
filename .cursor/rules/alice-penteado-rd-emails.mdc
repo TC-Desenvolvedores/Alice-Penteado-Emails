@@ -31,21 +31,24 @@ HTML de campanhas da **Alice Penteado** para importação no **RD Station Market
 ```
 A. Organizar pasta + limpar links RD padrão em email.html
 B. (Opcional) Otimizar imagens — skill global optimize-images
-C. Upload imagens no RD (Playwright MCP) → imagens-urls.yaml
+C. Upload imagens no editor de e-mail RD (Playwright MCP) → imagens-urls.yaml
 D. Gerar email-rd.html — scripts/build_email_rd.py (email.html + imagens-urls.yaml)
 E. Commit + push no GitHub TC-Desenvolvedores → URL raw para importação
 F. NÃO importar HTML no RD via Playwright (usuário faz manualmente)
 G. Encerrar o chat com 「Próximos passos (você)」 — docs/publicacao-rd-checklist.md
 ```
 
-### B — Upload de imagens (Playwright)
+### C — Upload de imagens (Playwright, editor de e-mail)
 
-- Skill do projeto: `.cursor/skills/rd-station-email-images-upload/SKILL.md`
-- Script de referência: `scripts/playwright-rd-upload-email-images.js` (`browser_run_code_unsafe`)
+- **Proibido:** upload via **Landing Pages** (não usar `landing-pages/.../editar` nem `.bricks-image` de LP).
+- **Obrigatório:** construtor de e-mail RD → `/email/{id}/edit` (iframe **Beefree** `app.getbee.io`).
+- Arrastar bloco **Imagem** da sidebar para o stage → **Procurar** / **Add image** → upload → copiar **Url** ou `src` CloudFront.
+- Skill: `.cursor/skills/rd-station-email-images-upload/SKILL.md` — detalhes: `docs/upload-imagens-editor-email-rd.md`.
+- Script: `scripts/playwright-rd-upload-email-images.js` (`browser_run_code_unsafe`).
 - MCP **user-playwright**; viewport **1920×1400**; humano conclui login/2FA no RD.
-- **Alice Penteado (conta `975793`):** fallback validado — editor de LP `https://app.rdstation.com.br/landing-pages/9012250/editar`, bloco `.bricks-image`, **não salvar** a LP após os uploads.
-- Capturar URL via **interceptação do POST** em `rdstation-static.s3.amazonaws.com` → prefixo `https://d335luupugsy2.cloudfront.net/`. Helper: `scripts/rd-s3-key-to-cloudfront.js`.
-- Gravar `imagens-urls.yaml` e `meta.yaml` (`imagens_publicadas: true`).
+- Rascunho de trabalho recomendado (ex. `[TC] ...`, `email_id` anotado no YAML).
+- URL: priorizar campo **Url** / `src` do módulo; backup: POST `rdstation-static.s3.amazonaws.com` → `https://d335luupugsy2.cloudfront.net/` (`scripts/rd-s3-key-to-cloudfront.js`).
+- Gravar `imagens-urls.yaml` (`upload_via: email-editor-beefree`) e `meta.yaml` (`imagens_publicadas: true`).
 
 ### D — `email-rd.html`
 
@@ -84,4 +87,5 @@ Requer **PyYAML** (`python -m pip install pyyaml`).
 - `README.md` (raiz) — ambiente do desenvolvedor e índice de peças
 - `docs/variaveis-rd.md`
 - `docs/publicacao-rd-checklist.md`
+- `docs/upload-imagens-editor-email-rd.md`
 - Skill: `.cursor/skills/alice-penteado-rd-email/SKILL.md`
