@@ -1,0 +1,18 @@
+slug: newsletter-semanal-solitarios-2026-10-22
+tipo: newsletter-semanal
+cliente: Alice Penteado
+plataforma: RD Station Marketing
+criado_em: 2026-10-22
+origem:
+  html: newsletter-v3.html
+  imagens: imagens-20261023T013413Z-1-001.zip
+
+campanha:
+  nome_sugerido: "Newsletter Semanal — Solitários"
+  assunto_sugerido: "O seu diamante está aqui"
+  preheader: "Coração, oval ou gota: diamantes naturais e certificados."
+
+publicacao_rd:
+  metodo: Importar com HTML (novo editor)
+  imagens: substituir src relativos por URLs absolutas do CDN após upload no RD
+  teste: enviar e-mail de teste antes do disparo; links de descadastro só funcionam após envio real

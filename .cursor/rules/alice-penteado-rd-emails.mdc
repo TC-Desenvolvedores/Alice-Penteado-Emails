@@ -1,0 +1,34 @@
+---
+description: E-mails HTML Alice Penteado para RD Station Marketing — estrutura de pastas, variáveis e publicação
+globs: emails/**/*.html
+alwaysApply: false
+---
+
+# Alice Penteado — E-mails RD Station
+
+## Escopo
+
+HTML de campanhas da **Alice Penteado** para importação no **RD Station Marketing** (não SFMC).
+
+## Ao receber HTML + imagens do usuário
+
+1. Criar pasta `emails/{slug}/` com slug `tipo-tema-AAAA-MM-DD`.
+2. Salvar HTML como `email.html`; imagens em `imagens/` (manter nomes originais).
+3. Adicionar `meta.yaml` (assunto, preheader, notas) e `README.md` curto.
+4. Atualizar tabela em `README.md` na raiz.
+5. Aplicar variáveis RD em links obrigatórios — ver `docs/variaveis-rd.md`:
+   - `*|WEB_PREVIEW_LINK|*` (ver no navegador)
+   - `*|LINK_DESCADASTRO|*` (descadastrar)
+
+## HTML
+
+- Layout em tabelas, ~600px, CSS inline + `@media` no `<head>`.
+- Manter preheader oculto, blocos MSO/VML existentes, links WhatsApp e site da marca.
+- `src` de imagens: relativos `imagens/...` no repo; documentar troca por CDN no `meta.yaml`.
+- Não remover descadastro/ver no navegador por estética.
+
+## Referências
+
+- `docs/variaveis-rd.md`
+- Skill: `.cursor/skills/alice-penteado-rd-email/SKILL.md`
+- MCP `user-marketing` para metadados de campanhas (não retorna HTML).
