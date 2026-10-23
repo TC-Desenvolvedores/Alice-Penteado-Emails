@@ -5,19 +5,18 @@ Formato geral: `*|NOME_DA_VARIAVEL|*` no corpo ou no assunto (via botão **Inser
 Documentação oficial:
 
 - [Usar variáveis em e-mails](https://ajuda.rdstation.com/s/article/Usar-vari%C3%A1veis-em-emails?language=pt_BR)
-- [Erros em variáveis](https://ajuda.rdstation.com/s/article/Erros-em-variaveis-de-email-e-como-resolver)
 - [Descadastro](https://ajuda.rdstation.com/s/article/Descadastro-de-email-cancelar-inscri%C3%A7%C3%A3o)
 
-## Obrigatórias neste repositório (links no `href`)
+## Ver no navegador e descadastro — **não** colocar no HTML
 
-| Uso | Variável | Exemplo no HTML |
-|-----|----------|-----------------|
-| Ver no navegador | `*|WEB_PREVIEW_LINK|*` | `<a href="*|WEB_PREVIEW_LINK|*">Ver no navegador</a>` |
-| Descadastro | `*|LINK_DESCADASTRO|*` | `<a href="*|LINK_DESCADASTRO|*">Descadastrar</a>` |
+No **novo editor**, o RD já inclui por padrão o link de visualização no navegador e o de cancelamento de inscrição (rodapé / recursos da plataforma). Duplicar no HTML importado gera validação duplicada e erros de variável.
 
-Em **pré-visualização**, o link de descadastro pode não executar a ação; após o envio real, o RD substitui pela URL `app.rdstation.email/descadastrar/...`.
+**Regra do repositório Alice Penteado:** o agente deve **remover** do HTML recebido:
 
-> **Validação:** ao colar o HTML no RD, abra **Inserir variável** e confira se os nomes batem com os da conta. Se o editor mostrar outro identificador, copie exatamente do painel (a RD não substitui tags digitadas erradas).
+- Blocos/links “Ver no navegador” (e qualquer `*|WEB_PREVIEW_LINK|*`)
+- Blocos/links “Descadastrar” / “Cancelar inscrição” (e qualquer `*|LINK_DESCADASTRO|*`)
+
+Manter preheader oculto no `<head>` (texto de preview na caixa de entrada), WhatsApp, site, Instagram e demais links de campanha.
 
 ## Personalização (quando necessário)
 
@@ -31,7 +30,6 @@ Campos personalizados seguem o nome exibido no botão **Inserir variável** (ex.
 
 ## Regras rápidas
 
-1. Variáveis de **URL** vão no atributo `href` de um `<a>`.
-2. Não usar variáveis em botões CTA do editor visual; em HTML importado, links `<a>` funcionam.
-3. Gmail oferece descadastro com um clique no cabeçalho automaticamente (RD); o link no rodapé continua recomendado.
-4. Imagens no HTML importado precisam de **URL absoluta** após upload no RD (paths relativos `imagens/...` servem só para preview local).
+1. Variáveis de lead vão onde o RD permitir (texto/assunto); copie o nome exato do painel **Inserir variável**.
+2. Imagens no HTML importado precisam de **URL absoluta** no `email-rd.html` (paths `imagens/...` só no preview local).
+3. Descadastro com um clique no Gmail é tratado pelo RD automaticamente; o rodapé padrão da plataforma cobre o opt-out no corpo do envio.

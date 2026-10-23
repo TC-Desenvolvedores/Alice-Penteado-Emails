@@ -17,12 +17,14 @@ docs/
 
 **Convenção de pasta:** `tipo-tema-AAAA-MM-DD` (ex.: `newsletter-semanal-solitarios-2026-10-22`).
 
-## Fluxo (você → agente)
+## Fluxo (você → agente → você)
 
 1. Enviar no chat o **HTML** e o **ZIP de imagens** (ou paths locais).
-2. O agente cria uma pasta em `emails/`, aplica variáveis RD e documenta em `meta.yaml`.
-3. No RD: **Relacionar → E-mail → Criar e-mail → Importar com HTML** ([ajuda](https://ajuda.rdstation.com/s/article/Criar-um-Email?language=pt_BR)).
-4. Subir imagens no gerenciador do RD e trocar `imagens/...` por URLs absolutas do CDN antes do envio.
+2. O agente cria a pasta em `emails/`, variáveis RD, upload de imagens (quando possível) e `email-rd.html`.
+3. O agente informa **próximos passos** e a **URL raw** (ou arquivo) para importar no RD.
+4. Você importa no RD, revisa links/variáveis, configura assunto e envia **e-mail de teste**.
+
+Checklist completo: [`docs/publicacao-rd-checklist.md`](docs/publicacao-rd-checklist.md).
 
 ## Índice de e-mails
 

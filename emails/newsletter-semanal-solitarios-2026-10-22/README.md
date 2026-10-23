@@ -4,7 +4,18 @@ Peça focada em solitários com lapidações coração, oval e gota.
 
 | Arquivo | Uso |
 |---------|-----|
-| `email.html` | Colar no RD Station (Importar com HTML) |
-| `imagens/` | Assets locais; publicar no RD e atualizar `src` para URLs `https://d335luupugsy2.cloudfront.net/...` |
+| `email.html` | Versão com paths locais (`imagens/...`) |
+| `email-rd.html` | **Importar no RD** — `src` já com CDN CloudFront |
+| `email-premailer.html` | Opcional — CSS inline (revisar links RD após Premailer) |
+| `imagens-urls.yaml` | Mapa arquivo → URL (upload Playwright, out/2026) |
+| `imagens/` | Assets locais (fonte) |
 
-Variáveis RD já aplicadas: ver [`docs/variaveis-rd.md`](../../docs/variaveis-rd.md).
+Sem links de “Ver no navegador” / “Descadastrar” no HTML (padrão RD). Ver [`docs/variaveis-rd.md`](../../docs/variaveis-rd.md).
+
+### Importar no RD (manual)
+
+URL raw recomendada (`email-rd.html`):
+
+`https://gist.githubusercontent.com/TiagoAFernandes/99639fccb8689ea3b1a07de085b67140/raw/email-rd.html`
+
+Passos: [`docs/publicacao-rd-checklist.md`](../../docs/publicacao-rd-checklist.md).

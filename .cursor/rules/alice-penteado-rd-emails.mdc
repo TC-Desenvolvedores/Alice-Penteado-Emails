@@ -16,19 +16,25 @@ HTML de campanhas da **Alice Penteado** para importação no **RD Station Market
 2. Salvar HTML como `email.html`; imagens em `imagens/` (manter nomes originais).
 3. Adicionar `meta.yaml` (assunto, preheader, notas) e `README.md` curto.
 4. Atualizar tabela em `README.md` na raiz.
-5. Aplicar variáveis RD em links obrigatórios — ver `docs/variaveis-rd.md`:
-   - `*|WEB_PREVIEW_LINK|*` (ver no navegador)
-   - `*|LINK_DESCADASTRO|*` (descadastrar)
+5. **Remover** links de “Ver no navegador” e “Descadastrar” (e variáveis `*|WEB_PREVIEW_LINK|*`, `*|LINK_DESCADASTRO|*`) — o RD já inclui isso por padrão. Ver `docs/variaveis-rd.md`.
 
 ## HTML
 
 - Layout em tabelas, ~600px, CSS inline + `@media` no `<head>`.
 - Manter preheader oculto, blocos MSO/VML existentes, links WhatsApp e site da marca.
 - `src` de imagens: relativos `imagens/...` no repo; documentar troca por CDN no `meta.yaml`.
-- Não remover descadastro/ver no navegador por estética.
+- Não incluir preview/descadastro no HTML importado (evita duplicata e erro de validação no novo editor).
+
+## Após preparar a peça (agente)
+
+- Gerar `email-rd.html` + `imagens-urls.yaml` quando houver upload de imagens.
+- Opcional: `email-premailer.html` (Python) e URL raw em Gist para importação.
+- **Não** automatizar importação de HTML no RD (usuário faz manualmente).
+- **Sempre** informar no chat a seção **Próximos passos (você)** — ver skill e `docs/publicacao-rd-checklist.md`.
 
 ## Referências
 
 - `docs/variaveis-rd.md`
+- `docs/publicacao-rd-checklist.md`
 - Skill: `.cursor/skills/alice-penteado-rd-email/SKILL.md`
 - MCP `user-marketing` para metadados de campanhas (não retorna HTML).

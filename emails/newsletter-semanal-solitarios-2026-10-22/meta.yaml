@@ -14,5 +14,12 @@ campanha:
 
 publicacao_rd:
   metodo: Importar com HTML (novo editor)
-  imagens: substituir src relativos por URLs absolutas do CDN após upload no RD
-  teste: enviar e-mail de teste antes do disparo; links de descadastro só funcionam após envio real
+  html_com_cdn: email-rd.html
+  importar_via_url_raw: https://gist.githubusercontent.com/TiagoAFernandes/99639fccb8689ea3b1a07de085b67140/raw/email-rd.html
+  importar_via_url_premailer_opcional: https://gist.githubusercontent.com/TiagoAFernandes/2c835dd804abee8f84a432dd5ff51a32/raw/email-premailer.html
+  imagens_mapeamento: imagens-urls.yaml
+  imagens_publicadas: true
+  importacao_html: manual pelo usuario
+  html_sem_preview_descadastro: true
+  nota_links_rd: preview e descadastro vêm do padrão RD; não duplicar no HTML
+  teste: enviar e-mail de teste antes do disparo
