@@ -1,6 +1,6 @@
 ---
-description: E-mails HTML Alice Penteado para RD Station Marketing — estrutura de pastas, variáveis e publicação
-globs: emails/**/*.html
+description: E-mails HTML Alice Penteado para RD Station Marketing — estrutura, pipeline do agente e publicação
+globs: emails/**/*
 alwaysApply: false
 ---
 
@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Escopo
 
-HTML de campanhas da **Alice Penteado** para importação no **RD Station Marketing** (não SFMC).
+HTML de campanhas da **Alice Penteado** para importação no **RD Station Marketing** (não SFMC). O agente prepara arquivos no repositório; **importação do HTML no RD e disparo são manuais** pelo usuário.
 
 ## Ao receber HTML + imagens do usuário
 
@@ -22,19 +22,66 @@ HTML de campanhas da **Alice Penteado** para importação no **RD Station Market
 
 - Layout em tabelas, ~600px, CSS inline + `@media` no `<head>`.
 - Manter preheader oculto, blocos MSO/VML existentes, links WhatsApp e site da marca.
-- `src` de imagens: relativos `imagens/...` no repo; documentar troca por CDN no `meta.yaml`.
+- `src` de imagens: relativos `imagens/...` no repo até o upload; depois CloudFront em `email-rd.html`.
 - Não incluir preview/descadastro no HTML importado (evita duplicata e erro de validação no novo editor).
+- Se usar `<picture>` + WebP local, o build para RD remove `<picture>` e deixa só `<img>` com URL absoluta.
 
-## Após preparar a peça (agente)
+## Pipeline do agente (ordem obrigatória)
 
-- Gerar `email-rd.html` + `imagens-urls.yaml` quando houver upload de imagens.
-- Opcional: `email-premailer.html` (Python) e URL raw em Gist para importação.
-- **Não** automatizar importação de HTML no RD (usuário faz manualmente).
-- **Sempre** informar no chat a seção **Próximos passos (você)** — ver skill e `docs/publicacao-rd-checklist.md`.
+```
+A. Organizar pasta + limpar links RD padrão em email.html
+B. (Opcional) Otimizar imagens — skill global optimize-images
+C. Upload imagens no RD (Playwright MCP) → imagens-urls.yaml
+D. Gerar email-rd.html — scripts/build_email_rd.py (email.html + imagens-urls.yaml)
+E. Commit + push no GitHub TC-Desenvolvedores → URL raw para importação
+F. NÃO importar HTML no RD via Playwright (usuário faz manualmente)
+G. Encerrar o chat com 「Próximos passos (você)」 — docs/publicacao-rd-checklist.md
+```
+
+### B — Upload de imagens (Playwright)
+
+- Skill do projeto: `.cursor/skills/rd-station-email-images-upload/SKILL.md`
+- Script de referência: `scripts/playwright-rd-upload-email-images.js` (`browser_run_code_unsafe`)
+- MCP **user-playwright**; viewport **1920×1400**; humano conclui login/2FA no RD.
+- **Alice Penteado (conta `975793`):** fallback validado — editor de LP `https://app.rdstation.com.br/landing-pages/9012250/editar`, bloco `.bricks-image`, **não salvar** a LP após os uploads.
+- Capturar URL via **interceptação do POST** em `rdstation-static.s3.amazonaws.com` → prefixo `https://d335luupugsy2.cloudfront.net/`. Helper: `scripts/rd-s3-key-to-cloudfront.js`.
+- Gravar `imagens-urls.yaml` e `meta.yaml` (`imagens_publicadas: true`).
+
+### D — `email-rd.html`
+
+```bash
+python scripts/build_email_rd.py emails/{slug}
+```
+
+Requer **PyYAML** (`python -m pip install pyyaml`).
+
+### E — URL pública para “Importar via URL” no RD
+
+- **Não** publicar HTML em Gist de conta pessoal.
+- Organizações GitHub **não criam Gists novos**; usar repositório público da org:
+  - Repositório: `TC-Desenvolvedores/Alice-Penteado-Emails`
+  - Padrão: `https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/master/emails/{slug}/email-rd.html`
+- Após commit, **push** em `origin` (desenvolvedor precisa de acesso à org e `gh` autenticado).
+- Registrar a URL em `meta.yaml` → `publicacao.importar_via_url_raw`.
+
+### Opcional
+
+- `email-premailer.html` via biblioteca Python `premailer` com `base_url=None` (revisar se não reintroduzir preview/descadastro).
+- MCP **user-marketing**: metadados de campanhas/e-mails (não retorna HTML).
+
+## Artefatos por pasta `emails/{slug}/`
+
+| Arquivo | Função |
+|---------|--------|
+| `email.html` | Fonte com paths `imagens/...` |
+| `email-rd.html` | Importação no RD (CloudFront) |
+| `imagens-urls.yaml` | Mapa arquivo → URL CDN |
+| `meta.yaml` | Assunto, preheader, URL raw, flags |
+| `README.md` | Resumo da peça |
 
 ## Referências
 
+- `README.md` (raiz) — ambiente do desenvolvedor e índice de peças
 - `docs/variaveis-rd.md`
 - `docs/publicacao-rd-checklist.md`
 - Skill: `.cursor/skills/alice-penteado-rd-email/SKILL.md`
-- MCP `user-marketing` para metadados de campanhas (não retorna HTML).

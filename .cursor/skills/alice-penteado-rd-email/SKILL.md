@@ -52,7 +52,8 @@ Checklist completo: `docs/publicacao-rd-checklist.md`.
 
 ## Publicação no RD (referência)
 
-Detalhes para o **usuário** (não automatizar import): `docs/publicacao-rd-checklist.md`.
+Detalhes para o **usuário** (não automatizar import): `docs/publicacao-rd-checklist.md`.  
+Pipeline e pré-requisitos de outro desenvolvedor: `README.md` e `.cursor/rules/alice-penteado-rd-emails.mdc`.
 
 Upload automatizado de imagens (Playwright): `.cursor/skills/rd-station-email-images-upload/SKILL.md` e `scripts/playwright-rd-upload-email-images.js`.
 Referência LP: skill global `rd-station-landing-images-upload`.
