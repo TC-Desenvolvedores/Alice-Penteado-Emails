@@ -1,6 +1,8 @@
-# Newsletter Semanal — Solitários (22/10/2026)
+# Newsletter Semanal — Solitários (22/10/2026) — v1
 
 Peça focada em solitários com lapidações coração, oval e gota.
+
+Versão mais recente (PDF 23/10): [`../newsletter-semanal-solitarios-2026-10-23/`](../newsletter-semanal-solitarios-2026-10-23/).
 
 | Arquivo | Uso |
 |---------|-----|

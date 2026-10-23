@@ -1,0 +1,26 @@
+slug: newsletter-semanal-solitarios-2026-10-23
+tipo: newsletter-semanal
+cliente: Alice Penteado
+plataforma: RD Station Marketing
+criado_em: 2026-10-23
+versao_anterior: newsletter-semanal-solitarios-2026-10-22
+origem:
+  pdf: origem/Newsletter_Solitarios_Alice_Penteado.pdf
+  notas: Layout e textos conforme PDF de 23/10/2026 (ReportLab)
+
+campanha:
+  nome_sugerido: "Newsletter Semanal — Solitários (v2)"
+  assunto_sugerido: "O seu diamante está aqui."
+  preheader: "Coração, oval ou gota: diamantes naturais com certificação individual."
+
+publicacao_rd:
+  metodo: Importar com HTML (novo editor)
+  html_trabalho: email.html
+  html_importar: email-rd.html
+  gerar_email_rd: python scripts/build_email_rd.py newsletter-semanal-solitarios-2026-10-23
+  imagens_mapeamento: imagens-urls.yaml
+  html_sem_preview_descadastro: true
+  imagens_publicadas: false
+  importacao_html: manual pelo usuario
+  importar_via_url_raw: null
+  teste: enviar e-mail de teste antes do disparo

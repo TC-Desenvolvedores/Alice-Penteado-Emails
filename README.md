@@ -30,7 +30,8 @@ Checklist completo: [`docs/publicacao-rd-checklist.md`](docs/publicacao-rd-check
 
 | Pasta | Tipo | Data |
 |-------|------|------|
-| [newsletter-semanal-solitarios-2026-10-22](emails/newsletter-semanal-solitarios-2026-10-22/) | Newsletter semanal | 2026-10-22 |
+| [newsletter-semanal-solitarios-2026-10-23](emails/newsletter-semanal-solitarios-2026-10-23/) | Newsletter semanal (v2, PDF) | 2026-10-23 |
+| [newsletter-semanal-solitarios-2026-10-22](emails/newsletter-semanal-solitarios-2026-10-22/) | Newsletter semanal (v1) | 2026-10-22 |
 
 ## Ferramentas
 

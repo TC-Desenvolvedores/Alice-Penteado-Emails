@@ -1,0 +1,14 @@
+# Preencher após upload no RD (Playwright: .cursor/skills/rd-station-email-images-upload/SKILL.md)
+uploaded_at: null
+rd_account_id: 975793
+cdn_base: https://d335luupugsy2.cloudfront.net
+upload_via: landing-page-editor-temporario
+note: Rodar scripts/build_email_rd.py após preencher todas as URLs abaixo.
+
+files:
+  01_logo.png: ""
+  03_hero.jpg: ""
+  05_polaroid-coracao.png: ""
+  06_oval-diagonal.png: ""
+  08_polaroid-gota.png: ""
+  09_certificacao-gia.jpg: ""
