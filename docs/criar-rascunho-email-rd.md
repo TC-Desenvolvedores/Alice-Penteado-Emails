@@ -17,7 +17,6 @@ Padrão fixo:
 
 Exemplos:
 
-- `[TC] Promocional Joias - 2026-10-23`
 - `[TC] Newsletter Solitários - 2026-10-23`
 
 Registrar em `meta.yaml`:
@@ -25,7 +24,7 @@ Registrar em `meta.yaml`:
 ```yaml
 publicacao_rd:
   rascunho_rd:
-    nome: "[TC] Promocional Joias - 2026-10-23"
+    nome: "[TC] Newsletter Solitários - 2026-10-23"
     email_id: null   # preencher após criar
 ```
 

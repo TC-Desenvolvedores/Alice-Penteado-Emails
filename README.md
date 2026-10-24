@@ -36,7 +36,6 @@ scripts/
 
 | Pasta | Tipo | Data |
 |-------|------|------|
-| [promocional-joias-2026-10-23](emails/promocional-joias-2026-10-23/) | Promocional editorial | 2026-10-23 |
 | [newsletter-semanal-solitarios-2026-10-23](emails/newsletter-semanal-solitarios-2026-10-23/) | Newsletter semanal (v2, PDF) | 2026-10-23 |
 | [newsletter-semanal-solitarios-2026-10-22](emails/newsletter-semanal-solitarios-2026-10-22/) | Newsletter semanal (v1) | 2026-10-22 |
 

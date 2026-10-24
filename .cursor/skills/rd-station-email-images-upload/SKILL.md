@@ -35,7 +35,7 @@ Skill global LP (snippets S3): `~/.cursor/skills/rd-station-landing-images-uploa
 ## C0 — Nome do rascunho
 
 ```text
-[TC] Promocional Joias - 2026-10-23
+[TC] Newsletter Solitários - 2026-10-23
 ```
 
 Derivar de `meta.yaml` (`campanha.nome_sugerido` + data). Gravar `email_draft_id` em `imagens-urls.yaml` e `publicacao_rd.rascunho_rd` em `meta.yaml`.
@@ -89,7 +89,7 @@ landing_page_id: null            # ou ID se usou C2; excluida: true
 rd_account_id: 975793
 cdn_base: https://d335luupugsy2.cloudfront.net
 files:
-  hero-joias.jpg: https://d335luupugsy2.cloudfront.net/cms/files/...
+  03_hero.jpg: https://d335luupugsy2.cloudfront.net/cms/files/...
 ```
 
 `meta.yaml`: `imagens_publicadas: true`.

@@ -20,7 +20,7 @@ As URLs geradas na LP são as **mesmas** usadas em e-mail (`email-rd.html`).
 [TC] temp upload — {slug}
 ```
 
-Ex.: `[TC] temp upload — promocional-joias-2026-10-23`
+Ex.: `[TC] temp upload — newsletter-semanal-solitarios-2026-10-23`
 
 ## Workflow do agente
 
@@ -76,7 +76,7 @@ landing_page_excluida: true
 rd_account_id: 975793
 cdn_base: https://d335luupugsy2.cloudfront.net
 files:
-  hero-joias.jpg: https://d335luupugsy2.cloudfront.net/cms/files/975793/...
+  03_hero.jpg: https://d335luupugsy2.cloudfront.net/cms/files/975793/...
 ```
 
 `meta.yaml`: `imagens_publicadas: true` e `publicacao_rd.rascunho_rd.email_id` preenchido.

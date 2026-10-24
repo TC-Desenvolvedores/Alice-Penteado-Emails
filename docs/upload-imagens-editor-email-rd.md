@@ -90,7 +90,7 @@ email_draft_id: 23511920
 cdn_base: https://d335luupugsy2.cloudfront.net
 rd_account_id: 975793
 files:
-  hero-joias.jpg: https://d335luupugsy2.cloudfront.net/cms/files/...
+  03_hero.jpg: https://d335luupugsy2.cloudfront.net/cms/files/...
 ```
 
 `meta.yaml`: `imagens_publicadas: true`, `publicacao_rd.rascunho_rd`.
