@@ -31,11 +31,17 @@ description: >-
 
 ```
 A. Organizar pasta + limpar links RD padrão em email.html
-B. Upload imagens no editor de e-mail (Playwright, Beefree) → imagens-urls.yaml + email-rd.html
-C. (Opcional) Premailer Python (base_url=None) → email-premailer.html
-D. URL pública para importação: **raw** do repositório público `TC-Desenvolvedores/Alice-Penteado-Emails` (orgs GitHub não criam Gists novos; não usar gist pessoal)
-E. NÃO importar HTML no RD via Playwright (manual pelo usuário)
+B. (Opcional) optimize-images
+C0. Criar rascunho NOVO no RD: [TC] {nome}-{AAAA-MM-DD} (docs/criar-rascunho-email-rd.md)
+C1. Upload imagens nesse rascunho (Beefree) → imagens-urls.yaml
+C2. Se C1 falhar: LP temp [TC] temp upload — {slug} → upload → EXCLUIR LP (docs/upload-imagens-lp-temporaria-rd.md)
+D. build_email_rd.py → email-rd.html
+E. (Opcional) Premailer Python (base_url=None) → email-premailer.html
+F. URL raw TC-Desenvolvedores/Alice-Penteado-Emails (não gist pessoal)
+G. NÃO importar HTML no RD via Playwright (manual pelo usuário)
 ```
+
+Cada peça nova = **novo** rascunho `[TC]`; não reutilizar rascunho de campanha anterior só para CDN.
 
 ## Entrega obrigatória no chat — Próximos passos (usuário)
 
@@ -55,7 +61,7 @@ Checklist completo: `docs/publicacao-rd-checklist.md`.
 Detalhes para o **usuário** (não automatizar import): `docs/publicacao-rd-checklist.md`.  
 Pipeline e pré-requisitos de outro desenvolvedor: `README.md` e `.cursor/rules/alice-penteado-rd-emails.mdc`.
 
-Upload automatizado de imagens (Playwright): `.cursor/skills/rd-station-email-images-upload/SKILL.md`, `docs/upload-imagens-editor-email-rd.md` e `scripts/playwright-rd-upload-email-images.js`. **Não** usar Landing Pages.
+Upload (Playwright): `.cursor/skills/rd-station-email-images-upload/SKILL.md`, `docs/criar-rascunho-email-rd.md`, `docs/upload-imagens-editor-email-rd.md`, fallback `docs/upload-imagens-lp-temporaria-rd.md`, `scripts/playwright-rd-upload-email-images.js`.
 
 ## MCP
 

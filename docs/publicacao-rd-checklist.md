@@ -6,9 +6,10 @@ O agente prepara HTML, imagens no CDN e (opcional) URL pública para importaçã
 
 | Artefato | Descrição |
 |----------|-----------|
+| Rascunho RD `[TC] nome-data` | Criado pelo agente; `email_id` em `meta.yaml` / `imagens-urls.yaml` |
 | `email.html` | Paths locais `imagens/...` (sem links RD de preview/descadastro) |
 | `email-rd.html` | Mesmo HTML com `src` em CloudFront (conta RD) |
-| `imagens-urls.yaml` | Mapa arquivo → URL após upload Playwright |
+| `imagens-urls.yaml` | Mapa arquivo → URL após upload (e-mail ou LP temp excluída) |
 | `email-premailer.html` | (Opcional) CSS mais inline via biblioteca Python `premailer` |
 | URL raw | Link para **Importar via URL** no RD (`raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/...`) |
 

@@ -5,16 +5,17 @@
  * NÃO usar Landing Pages.
  *
  * Parâmetros editáveis no início da função:
- * - emailEditUrl: rascunho com Conteúdo → Editar
+ * - emailEditUrl: rascunho NOVO da peça ([TC] nome-data) — docs/criar-rascunho-email-rd.md
  * - imagesDir + files[]
+ * Se falhar: docs/upload-imagens-lp-temporaria-rd.md (LP temp + excluir)
  */
 async (page) => {
   const CLOUDFRONT = "https://d335luupugsy2.cloudfront.net";
   const emailEditUrl =
-    "https://app.rdstation.com.br/email/23511919/edit";
+    "https://app.rdstation.com.br/email/REPLACE_EMAIL_ID/edit";
   const imagesDir =
-    "c:/Users/DIWER/Documents/TC/Alice-Penteado-Emails/emails/newsletter-semanal-solitarios-2026-10-23/imagens/";
-  const files = ["01_logo.png"];
+    "c:/Users/DIWER/Documents/TC/Alice-Penteado-Emails/emails/{slug}/imagens/";
+  const files = ["arquivo.jpg"];
 
   function s3XmlToCloudFront(xml) {
     const key = (xml.match(/<Key>([^<]+)<\/Key>/) || [])[1];

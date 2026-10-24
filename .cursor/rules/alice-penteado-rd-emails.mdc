@@ -31,24 +31,39 @@ HTML de campanhas da **Alice Penteado** para importação no **RD Station Market
 ```
 A. Organizar pasta + limpar links RD padrão em email.html
 B. (Opcional) Otimizar imagens — skill global optimize-images
-C. Upload imagens no editor de e-mail RD (Playwright MCP) → imagens-urls.yaml
+C0. Criar NOVO rascunho de e-mail no RD (Playwright) — nome [TC] {nome}-{AAAA-MM-DD} → anotar email_id em meta.yaml
+C1. Upload imagens no editor desse rascunho (/email/{id}/edit, Beefree) → imagens-urls.yaml
+C2. Se C1 falhar: LP temporária [TC] temp upload — {slug} → upload → EXCLUIR LP → imagens-urls.yaml (upload_via: landing-page-temporaria)
 D. Gerar email-rd.html — scripts/build_email_rd.py (email.html + imagens-urls.yaml)
 E. Commit + push no GitHub TC-Desenvolvedores → URL raw para importação
 F. NÃO importar HTML no RD via Playwright (usuário faz manualmente)
 G. Encerrar o chat com 「Próximos passos (você)」 — docs/publicacao-rd-checklist.md
 ```
 
-### C — Upload de imagens (Playwright, editor de e-mail)
+**Nunca** reutilizar rascunho `[TC]` de outra peça para upload — cada e-mail novo = novo rascunho (C0).
 
-- **Proibido:** upload via **Landing Pages** (não usar `landing-pages/.../editar` nem `.bricks-image` de LP).
-- **Obrigatório:** construtor de e-mail RD → `/email/{id}/edit` (iframe **Beefree** `app.getbee.io`).
-- Arrastar bloco **Imagem** da sidebar para o stage → **Procurar** / **Add image** → upload → copiar **Url** ou `src` CloudFront.
-- Skill: `.cursor/skills/rd-station-email-images-upload/SKILL.md` — detalhes: `docs/upload-imagens-editor-email-rd.md`.
-- Script: `scripts/playwright-rd-upload-email-images.js` (`browser_run_code_unsafe`).
+### C0 — Criar rascunho de e-mail no RD
+
+- Nome: **`[TC] {nome-do-e-mail}-{AAAA-MM-DD}`** (ver `docs/criar-rascunho-email-rd.md`).
+- Tipo: **Email Marketing**; gravar `publicacao_rd.rascunho_rd.nome` e `email_id` em `meta.yaml` e `imagens-urls.yaml`.
+
+### C1 — Upload de imagens (Playwright, editor de e-mail)
+
+- **Obrigatório tentar primeiro** no rascunho criado em C0: `/email/{id}/edit` (iframe **Beefree** `app.getbee.io`).
+- Arrastar bloco **Imagem** para linha vazia → **Procurar** / **Add image** → upload → copiar **Url** ou `src` CloudFront.
+- Skill: `.cursor/skills/rd-station-email-images-upload/SKILL.md` — `docs/upload-imagens-editor-email-rd.md`.
+- Script: `scripts/playwright-rd-upload-email-images.js` (`browser_run_code_unsafe`; `emailEditUrl` = rascunho da peça).
 - MCP **user-playwright**; viewport **1920×1400**; humano conclui login/2FA no RD.
-- Rascunho de trabalho recomendado (ex. `[TC] ...`, `email_id` anotado no YAML).
-- URL: priorizar campo **Url** / `src` do módulo; backup: POST `rdstation-static.s3.amazonaws.com` → `https://d335luupugsy2.cloudfront.net/` (`scripts/rd-s3-key-to-cloudfront.js`).
+- URL: campo **Url** / `src` do módulo; backup: POST `rdstation-static.s3.amazonaws.com` → `https://d335luupugsy2.cloudfront.net/` (`scripts/rd-s3-key-to-cloudfront.js`).
 - Gravar `imagens-urls.yaml` (`upload_via: email-editor-beefree`) e `meta.yaml` (`imagens_publicadas: true`).
+
+### C2 — Fallback: Landing Page temporária
+
+- **Somente** se C1 não concluir todos os uploads (módulo IMPORTAR HTML, drag sem `.module-box--image`, etc.).
+- Criar LP **`[TC] temp upload — {slug}`** → upload **somente nessa LP** (skill global `rd-station-landing-images-upload`, conta **975793**) → `docs/upload-imagens-lp-temporaria-rd.md`.
+- **Proibido** usar LP de outra campanha, LP publicada ou rascunho legado (ex.: “Catálogo Carioca”, ID compartilhado). Se o editor da LP temp não carregar, **aguardar/reabrir a LP temp** ou criar outra LP temp com sufixo `-2` — não trocar de LP.
+- **Excluir a LP temp** após gravar URLs no YAML (`landing_page_excluida: true`). Se não conseguir excluir, avisar o usuário com ID/nome.
+- `upload_via: landing-page-temporaria` em `imagens-urls.yaml` (`landing_page_id` = ID da LP temp usada no upload).
 
 ### D — `email-rd.html`
 

@@ -18,7 +18,9 @@ emails/
 docs/
   variaveis-rd.md        # merge tags e boas práticas RD
   publicacao-rd-checklist.md
+  criar-rascunho-email-rd.md
   upload-imagens-editor-email-rd.md
+  upload-imagens-lp-temporaria-rd.md
 scripts/
   build_email_rd.py      # gera email-rd.html
   playwright-rd-upload-email-images.js
@@ -34,6 +36,7 @@ scripts/
 
 | Pasta | Tipo | Data |
 |-------|------|------|
+| [promocional-joias-2026-10-23](emails/promocional-joias-2026-10-23/) | Promocional editorial | 2026-10-23 |
 | [newsletter-semanal-solitarios-2026-10-23](emails/newsletter-semanal-solitarios-2026-10-23/) | Newsletter semanal (v2, PDF) | 2026-10-23 |
 | [newsletter-semanal-solitarios-2026-10-22](emails/newsletter-semanal-solitarios-2026-10-22/) | Newsletter semanal (v1) | 2026-10-22 |
 
@@ -91,7 +94,7 @@ Como instalar MCPs depende da configuração da sua máquina/Cursor (Settings �
 | Skill | Função |
 |-------|--------|
 | `optimize-images` | Comprimir/redimensionar antes do upload |
-| `rd-station-landing-images-upload` | (Outros projetos LP; **não** usar para e-mail Alice) |
+| `rd-station-landing-images-upload` | Fallback Alice: LP **temporária** + exclusão — `docs/upload-imagens-lp-temporaria-rd.md` |
 
 O agente carrega skills pelo nome quando a tarefa combina; manter as globais instaladas evita improviso.
 
@@ -106,7 +109,7 @@ O agente carrega skills pelo nome quando a tarefa combina; manter as globais ins
 ### 6. Acesso RD Station (Alice Penteado)
 
 - Conta RD com permissão para **Landing Pages** e **E-mail Marketing** (upload de mídia usa o mesmo CDN).
-- Upload de imagens: **editor de e-mail** (`/email/{id}/edit`, Beefree) — ver [`docs/upload-imagens-editor-email-rd.md`](docs/upload-imagens-editor-email-rd.md). **Não** usar Landing Pages.
+- Por peça: **criar rascunho** `[TC] nome-AAAA-MM-DD` → upload no **editor de e-mail** (`/email/{id}/edit`). Se falhar: LP temp `[TC] temp upload — {slug}` e **excluir** a LP — [`docs/criar-rascunho-email-rd.md`](docs/criar-rascunho-email-rd.md), [`docs/upload-imagens-editor-email-rd.md`](docs/upload-imagens-editor-email-rd.md), [`docs/upload-imagens-lp-temporaria-rd.md`](docs/upload-imagens-lp-temporaria-rd.md).
 - Login e 2FA: **humano** no navegador controlado pelo Playwright; o agente não armazena senha no repositório.
 
 Não commitar `.env` com credenciais. Se usar automação de login em outros projetos, mantenha `.env` local e listado no `.gitignore`.
@@ -125,7 +128,7 @@ Não commitar `.env` com credenciais. Se usar automação de login em outros pro
 
 1. **Entrada:** HTML (ou PDF/design) + imagens (ZIP ou pasta).
 2. **Agente:** cria `emails/{slug}/`, `email.html`, `meta.yaml`, remove preview/descadastro do HTML.
-3. **Upload:** Playwright no **editor de e-mail** (bloco Imagem) → `imagens-urls.yaml` (URLs CloudFront).
+3. **RD:** criar rascunho `[TC]` → upload imagens no editor (ou LP temp + excluir) → `imagens-urls.yaml`.
 4. **Build:** `python scripts/build_email_rd.py emails/{slug}` → `email-rd.html`.
 5. **Publicação:** commit + push → URL `raw.githubusercontent.com` em `meta.yaml`.
 6. **Operador:** importar URL no RD, revisar, teste, disparo — [`docs/publicacao-rd-checklist.md`](docs/publicacao-rd-checklist.md).

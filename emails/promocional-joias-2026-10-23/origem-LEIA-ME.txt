@@ -1,0 +1,12 @@
+MODELO DE E-MAIL PROMOCIONAL — ALICE PENTEADO
+
+Arquivos:
+- email-promocional.html: template de e-mail responsivo com tabelas e CSS inline/compatível.
+- images/hero-joias.jpg: imagem principal editorial criada para o modelo.
+- images/detalhe-esmeraldas.jpg: recorte secundário da imagem editorial.
+
+Antes de enviar:
+1. Hospede as imagens em URLs públicas e troque os src relativos no HTML pelas URLs completas.
+2. Substitua {{unsubscribe_url}} pela URL real de descadastro da sua plataforma.
+3. Faça testes em Gmail, Outlook e celular. A imagem é conceitual e não representa necessariamente produtos exatos do catálogo.
+4. O texto não anuncia desconto ou promoção com prazo, pois nenhuma oferta específica foi confirmada.
