@@ -3,3 +3,9 @@
 *.zip
 .DS_Store
 Thumbs.db
+
+# Assets pesados — ficam local/Drive/RD; no GitHub só HTML, YAML e docs
+emails/**/imagens/**
+emails/**/origem/**
+emails/**/premailer-response.html
+emails/**/email-premailer.html

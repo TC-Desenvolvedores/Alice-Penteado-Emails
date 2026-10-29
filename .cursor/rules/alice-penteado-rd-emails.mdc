@@ -35,7 +35,7 @@ C0. Criar NOVO rascunho de e-mail no RD (Playwright) — nome [TC] {nome}-{AAAA-
 C1. Upload imagens no editor desse rascunho (/email/{id}/edit, Beefree) → imagens-urls.yaml
 C2. Se C1 falhar: LP temporária [TC] temp upload — {slug} → upload → EXCLUIR LP → imagens-urls.yaml (upload_via: landing-page-temporaria)
 D. Gerar email-rd.html — scripts/build_email_rd.py (email.html + imagens-urls.yaml)
-E. Commit + push no GitHub TC-Desenvolvedores → URL raw para importação
+E. Commit + push no GitHub TC-Desenvolvedores (**só** HTML, YAML, MD — **sem** `imagens/` nem `origem/`) → URL raw de `email-rd.html`
 F. NÃO importar HTML no RD via Playwright (usuário faz manualmente)
 G. Encerrar o chat com 「Próximos passos (você)」 — docs/publicacao-rd-checklist.md
 ```

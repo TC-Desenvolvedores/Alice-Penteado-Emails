@@ -13,7 +13,8 @@ emails/
     email-rd.html        # HTML para o RD (src em CloudFront)
     imagens-urls.yaml    # Mapa arquivo → URL após upload
     meta.yaml            # assunto, preheader, URL raw, notas
-    imagens/             # assets do e-mail
+    imagens/             # assets locais (não vão ao GitHub — ver .gitignore)
+    origem/              # PDF/fonte local (não vão ao GitHub)
     README.md            # resumo da peça
 docs/
   variaveis-rd.md        # merge tags e boas práticas RD
@@ -32,6 +33,8 @@ scripts/
 ```
 
 **Convenção de pasta:** `tipo-tema-AAAA-MM-DD` (ex.: `newsletter-semanal-solitarios-2026-10-23`).
+
+**GitHub:** versionar `email.html`, `email-rd.html`, `meta.yaml`, `imagens-urls.yaml` e `README.md`. **Não** enviar `imagens/`, `origem/` (PDF) nem exports Premailer — ficam na máquina ou no Drive; imagens publicadas ficam no CDN do RD (`imagens-urls.yaml`).
 
 ## Índice de e-mails
 
@@ -133,7 +136,7 @@ Demonstração em vídeo (Loom, 3 partes — onboarding de desenvolvedor): [`doc
 2. **Agente:** cria `emails/{slug}/`, `email.html`, `meta.yaml`, remove preview/descadastro do HTML.
 3. **RD:** criar rascunho `[TC]` → upload imagens no editor (ou LP temp + excluir) → `imagens-urls.yaml`.
 4. **Build:** `python scripts/build_email_rd.py emails/{slug}` → `email-rd.html`.
-5. **Publicação:** commit + push → URL `raw.githubusercontent.com` em `meta.yaml`.
+5. **Publicação:** commit + push → URL `raw.githubusercontent.com` em `meta.yaml` (**sem** `imagens/`, `origem/` ou Premailer — ver `.gitignore`).
 6. **Operador:** importar URL no RD, revisar, teste, disparo — [`docs/publicacao-rd-checklist.md`](docs/publicacao-rd-checklist.md).
 
 Detalhe passo a passo para o agente: `.cursor/rules/alice-penteado-rd-emails.mdc`.
