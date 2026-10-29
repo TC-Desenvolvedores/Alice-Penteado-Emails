@@ -1,0 +1,19 @@
+uploaded_at: 2026-10-29T20:06:00-03:00
+upload_via: email-editor-beefree
+email_draft_id: 23556580
+landing_page_id: null
+rd_account_id: 975793
+cdn_base: https://email-editor-production.s3.amazonaws.com/images/975793
+note: >-
+  URL gravada no campo Url do editor Beefree do rascunho [TC].
+  Resposta HTTP 200, tamanho idêntico ao arquivo local.
+
+files:
+  01-logo-cabecalho.png: https://email-editor-production.s3.amazonaws.com/images/975793/01-logo-cabecalho.png
+  02-hero-bloom-sale.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/02-hero-bloom-sale.jpg
+  03-diamantes.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/03-diamantes.jpg
+  04-perolas.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/04-perolas.jpg
+  05-pedras-coloridas.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/05-pedras-coloridas.jpg
+  06-esmeraldas.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/06-esmeraldas.jpg
+  07-amuletos.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/07-amuletos.jpg
+  08-logo-rodape.png: https://email-editor-production.s3.amazonaws.com/images/975793/08-logo-rodape.png

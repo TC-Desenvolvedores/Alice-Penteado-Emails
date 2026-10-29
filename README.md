@@ -36,6 +36,7 @@ scripts/
 
 | Pasta | Tipo | Data |
 |-------|------|------|
+| [newsletter-semanal-bloom-sale-2026-10-29](emails/newsletter-semanal-bloom-sale-2026-10-29/) | Newsletter semanal (Bloom Sale) | 2026-10-29 |
 | [newsletter-semanal-solitarios-2026-10-23](emails/newsletter-semanal-solitarios-2026-10-23/) | Newsletter semanal (v2, PDF) | 2026-10-23 |
 | [newsletter-semanal-solitarios-2026-10-22](emails/newsletter-semanal-solitarios-2026-10-22/) | Newsletter semanal (v1) | 2026-10-22 |
 

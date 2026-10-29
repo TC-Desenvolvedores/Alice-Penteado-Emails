@@ -1,0 +1,38 @@
+slug: newsletter-semanal-bloom-sale-2026-10-29
+tipo: newsletter-semanal
+cliente: Alice Penteado
+plataforma: RD Station Marketing
+criado_em: 2026-10-29
+origem:
+  drive: https://drive.google.com/drive/folders/1eBEZD5Tg4OsCMFRAh10V8TlMMxxLTFuD
+  html: bloom-sale-rd-station (V2 aprovada)
+  pdf: origem/Bloom-Sale-Newsletter-Alice-Penteado.pdf
+  notas: Layout e textos conforme HTML V2 e instruções de montagem (29/10/2026). Data de disparo a confirmar.
+
+campanha:
+  nome_sugerido: "Newsletter Bloom Sale"
+  assunto_sugerido: "Bloom Sale na Alice Penteado"
+  preheader: "Novembro floresce em ouro."
+
+publicacao_rd:
+  metodo: Importar com HTML (novo editor)
+  html_trabalho: email.html
+  html_importar: email-rd.html
+  gerar_email_rd: python scripts/build_email_rd.py newsletter-semanal-bloom-sale-2026-10-29
+  imagens_mapeamento: imagens-urls.yaml
+  html_sem_preview_descadastro: true
+  imagens_publicadas: true
+  rascunho_rd:
+    nome: "[TC] Newsletter Bloom Sale - 2026-10-29"
+    email_id: 23556580
+  importacao_html: manual pelo usuario
+  importar_via_url_raw: https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/master/emails/newsletter-semanal-bloom-sale-2026-10-29/email-rd.html
+  importar_via_url_nota: Organizações GitHub não criam Gists novos; URL raw do repositório público TC-Desenvolvedores (equivalente ao Gist para o RD).
+  teste: enviar e-mail de teste antes do disparo
+
+links:
+  catalogo: https://drive.google.com/file/d/1jQnGkkOkjeDA8nf-mmBoCxGTjeQh3_nY/view?usp=drive_link
+  whatsapp_bloom: "https://wa.me/5511984528799?text=Olá, gostaria de saber mais sobre a *Bloom Sale*!"
+  whatsapp_atelie: "https://wa.me/5511984528799?text=Olá, gostaria de conhecer o ateliê Alice Penteado"
+  site: https://alicepenteado.com.br/
+  instagram: https://www.instagram.com/Alice_penteado
