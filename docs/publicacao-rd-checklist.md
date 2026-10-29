@@ -2,6 +2,8 @@
 
 O agente prepara HTML, imagens no CDN e (opcional) URL pública para importação. **Importação do HTML no RD e disparo são manuais** até validação de automação.
 
+**Novo no time?** O processo completo do agente (organização → RD/Playwright → URL raw) está em vídeo, em três partes: [`docs/processo-publicacao-agente-loom.md`](processo-publicacao-agente-loom.md).
+
 ## O que o agente costuma entregar
 
 | Artefato | Descrição |

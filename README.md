@@ -18,6 +18,7 @@ emails/
 docs/
   variaveis-rd.md        # merge tags e boas práticas RD
   publicacao-rd-checklist.md
+  processo-publicacao-agente-loom.md  # vídeos Loom — fluxo do agente (onboarding dev)
   criar-rascunho-email-rd.md
   upload-imagens-editor-email-rd.md
   upload-imagens-lp-temporaria-rd.md
@@ -125,6 +126,8 @@ Não commitar `.env` com credenciais. Se usar automação de login em outros pro
 ---
 
 ## Processo com agente de IA (resumo)
+
+Demonstração em vídeo (Loom, 3 partes — onboarding de desenvolvedor): [`docs/processo-publicacao-agente-loom.md`](docs/processo-publicacao-agente-loom.md).
 
 1. **Entrada:** HTML (ou PDF/design) + imagens (ZIP ou pasta).
 2. **Agente:** cria `emails/{slug}/`, `email.html`, `meta.yaml`, remove preview/descadastro do HTML.

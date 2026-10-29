@@ -100,6 +100,7 @@ Requer **PyYAML** (`python -m pip install pyyaml`).
 ## Referências
 
 - `README.md` (raiz) — ambiente do desenvolvedor e índice de peças
+- `docs/processo-publicacao-agente-loom.md` — vídeos Loom do fluxo do agente (onboarding dev)
 - `docs/variaveis-rd.md`
 - `docs/publicacao-rd-checklist.md`
 - `docs/upload-imagens-editor-email-rd.md`

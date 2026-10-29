@@ -59,7 +59,11 @@ Checklist completo: `docs/publicacao-rd-checklist.md`.
 ## Publicação no RD (referência)
 
 Detalhes para o **usuário** (não automatizar import): `docs/publicacao-rd-checklist.md`.  
-Pipeline e pré-requisitos de outro desenvolvedor: `README.md` e `.cursor/rules/alice-penteado-rd-emails.mdc`.
+Pipeline e pré-requisitos de outro desenvolvedor: `README.md`, `docs/processo-publicacao-agente-loom.md` (vídeos Loom) e `.cursor/rules/alice-penteado-rd-emails.mdc`.
+
+## Onboarding de outro desenvolvedor
+
+Se alguém novo for operar ou revisar o fluxo, o agente deve indicar `docs/processo-publicacao-agente-loom.md` e os **três links Loom na ordem** documentada lá, além do README e do checklist de publicação.
 
 Upload (Playwright): `.cursor/skills/rd-station-email-images-upload/SKILL.md`, `docs/criar-rascunho-email-rd.md`, `docs/upload-imagens-editor-email-rd.md`, fallback `docs/upload-imagens-lp-temporaria-rd.md`, `scripts/playwright-rd-upload-email-images.js`.
 
