@@ -12,13 +12,14 @@ Peça a partir do HTML V2 aprovado (`index.html` na pasta do Drive) e do `ORIENT
 
 Sem links de preview/descadastro no HTML — padrão RD. O link “Descadastrar” do rascunho do Drive foi removido.
 
-## Pendências antes do disparo
+## Status
 
-1. Link do piercing de esmeraldas (vitrine): hoje aponta para a busca de piercings.
-2. Assunto **“Uni, duni, tê”** (sugestão do Drive) e preheader aprovados.
-3. Regras do frete grátis e do 10x sem juros, se houver, nas letras miúdas.
-4. Data de disparo.
-5. Teste de envio em Gmail, Apple Mail e Outlook, conferindo os links.
+Conteúdo aprovado: sem pendências de texto, assunto ou link. Assunto **“Uni, duni, tê”** e pré-header aprovados.
+
+Antes do disparo, falta só o fluxo manual:
+1. Importar `email-rd.html` no RD (via URL raw) e conferir o rascunho.
+2. Definir a data de disparo.
+3. Teste de envio em Gmail, Apple Mail e Outlook.
 
 ## Publicar no RD
 

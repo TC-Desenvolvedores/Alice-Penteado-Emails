@@ -14,7 +14,7 @@ campanha:
   nome_sugerido: "Newsletter Piercings"
   assunto_sugerido: "Uni, duni, tê"
   preheader: "Estilo e autoexpressão em piercings para compor do seu jeito."
-  assunto_status: sugestão do Drive, confirmar
+  assunto_status: aprovado (confirmado pelo usuário em 16/11/2026)
   data_disparo: a definir
 
 publicacao_rd:
@@ -34,10 +34,7 @@ publicacao_rd:
   importar_via_url_raw: https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/master/emails/newsletter-semanal-piercings-2026-11-16/email-rd.html
   teste: enviar e-mail de teste (Gmail celular e desktop, Apple Mail, Outlook) antes do disparo
 
-pendencias:
-  - "Link do piercing de esmeraldas (vitrine, item 7 do ORIENTACOES): hoje aponta para a busca de piercings."
-  - "Condições do frete grátis e do 10x sem juros: incluir nas letras miúdas se houver regra."
-  - "Data de disparo."
+pendencias: []
 
 links:
   site: https://alicepenteado.com.br/
