@@ -1,0 +1,42 @@
+slug: newsletter-semanal-piercings-2026-11-16
+tipo: newsletter-semanal
+cliente: Alice Penteado
+plataforma: RD Station Marketing
+criado_em: 2026-11-16
+origem:
+  drive: https://drive.google.com/drive/folders/1JvDp1pu0SETSUDoEvPuPpB0WoBEIAmPX
+  html: index.html (Drive, V2 aprovada em 13/11/2026)
+  imagens: https://drive.google.com/drive/folders/1QoL9SnGH26b4acwT_UQYJoLBWELFJ4c4 (12 arquivos, já otimizados)
+  referencias: referencia-desktop.png, referencia-mobile.png
+  notas: Conteúdo e layout conforme ORIENTACOES.md (V2). Ajustes feitos no HTML para o padrão do repositório (ver README da peça).
+
+campanha:
+  nome_sugerido: "Newsletter Piercings"
+  assunto_sugerido: "Uni, duni, tê"
+  preheader: "Estilo e autoexpressão em piercings para compor do seu jeito."
+  assunto_status: aprovado (confirmado pelo usuário em 16/11/2026)
+  data_disparo: a definir
+
+publicacao_rd:
+  metodo: Importar com HTML (novo editor)
+  html_trabalho: email.html
+  html_importar: email-rd.html
+  gerar_email_rd: python scripts/build_email_rd.py newsletter-semanal-piercings-2026-11-16
+  imagens_mapeamento: imagens-urls.yaml
+  html_sem_preview_descadastro: true
+  imagens_publicadas: true
+  rascunho_rd:
+    nome: "[TC] Newsletter Piercings - 2026-11-16"
+    email_id: 23663681
+    conta_rd: Alice Penteado (975793)
+    status: rascunho criado; 12 imagens enviadas pelo editor Beefree (URLs em imagens-urls.yaml); email-rd.html gerado; falta importar no RD e enviar teste
+  importacao_html: manual pelo usuario
+  importar_via_url_raw: https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/master/emails/newsletter-semanal-piercings-2026-11-16/email-rd.html
+  teste: enviar e-mail de teste (Gmail celular e desktop, Apple Mail, Outlook) antes do disparo
+
+pendencias: []
+
+links:
+  site: https://alicepenteado.com.br/
+  instagram: https://www.instagram.com/Alice_penteado
+  whatsapp_contato: "https://wa.me/5511985555134"
