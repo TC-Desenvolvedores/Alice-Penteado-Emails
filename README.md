@@ -40,6 +40,7 @@ scripts/
 
 | Pasta | Tipo | Data |
 |-------|------|------|
+| [newsletter-semanal-bloom-sale-envio2-2026-11-16](emails/newsletter-semanal-bloom-sale-envio2-2026-11-16/) | Newsletter semanal (Bloom Sale, 2º envio, reforço Black Friday) | 2026-11-16 |
 | [newsletter-semanal-piercings-2026-11-16](emails/newsletter-semanal-piercings-2026-11-16/) | Newsletter semanal (Piercings) | 2026-11-16 |
 | [newsletter-semanal-bloom-sale-2026-10-29](emails/newsletter-semanal-bloom-sale-2026-10-29/) | Newsletter semanal (Bloom Sale) | 2026-10-29 |
 | [newsletter-semanal-solitarios-2026-10-23](emails/newsletter-semanal-solitarios-2026-10-23/) | Newsletter semanal (v2, PDF) | 2026-10-23 |

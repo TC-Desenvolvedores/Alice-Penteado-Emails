@@ -1,0 +1,47 @@
+slug: newsletter-semanal-bloom-sale-envio2-2026-11-16
+tipo: newsletter-semanal
+cliente: Alice Penteado
+plataforma: RD Station Marketing
+criado_em: 2026-11-16
+origem:
+  drive: https://drive.google.com/drive/folders/1mXLxCKA1LdxzrNV6kmU_ci4txD3o8HwS
+  html: bloom-sale-envio2.html (V2 aprovada pela Alice)
+  instrucoes: LEIA-ME_instrucoes-de-montagem.txt
+  notas: >-
+    2º envio da Bloom Sale (meio de novembro), tratado como reforço da Black Friday.
+    As 8 fotos da rotação estão dentro do GIF; não há fotos separadas para subir.
+    Não alterar textos, cores, tamanhos de fonte nem espaçamentos. Não comprimir nem reconverter o GIF.
+
+campanha:
+  nome_sugerido: "Newsletter Bloom Sale Envio 2"
+  assunto_sugerido: "Bloom Sale Alice Penteado: garanta a sua joia"
+  preheader: "Condições especiais até o fim do mês."
+  remetente: Alice Penteado
+  data_disparo: 2026-11-23 (segunda-feira da semana da Black Friday; agendamento manual no RD)
+
+publicacao_rd:
+  metodo: Importar com HTML (novo editor)
+  html_trabalho: email.html
+  html_importar: email-rd.html
+  gerar_email_rd: python scripts/build_email_rd.py newsletter-semanal-bloom-sale-envio2-2026-11-16
+  imagens_mapeamento: imagens-urls.yaml
+  html_sem_preview_descadastro: true
+  imagens_publicadas: true
+  rascunho_rd:
+    nome: "[TC] Newsletter Bloom Sale Envio 2 - 2026-11-16"
+    email_id: 23663730
+    conta_rd: Alice Penteado (975793)
+    status: rascunho criado; 3 imagens enviadas no editor Beefree (URLs em imagens-urls.yaml); email-rd.html gerado; falta importar no RD, testar e agendar
+  importacao_html: manual pelo usuario
+  importar_via_url_raw: https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/main/emails/newsletter-semanal-bloom-sale-envio2-2026-11-16/email-rd.html
+  teste: enviar e-mail de teste (Gmail celular e desktop, Outlook) antes do disparo
+
+pendencias:
+  - "Catálogo no Google Drive precisa estar como 'Qualquer pessoa com o link'."
+
+links:
+  catalogo: https://drive.google.com/file/d/1jQnGkkOkjeDA8nf-mmBoCxGTjeQh3_nY/view?usp=drive_link
+  whatsapp_bloom: "https://wa.me/5511984528799?text=Olá, gostaria de consultar a *Bloom Sale*!"
+  whatsapp_atelie: "https://wa.me/5511984528799?text=Olá, gostaria de conhecer o ateliê Alice Penteado"
+  site: https://alicepenteado.com.br/
+  instagram: https://www.instagram.com/Alice_penteado
