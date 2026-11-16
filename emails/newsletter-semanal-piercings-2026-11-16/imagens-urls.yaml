@@ -1,0 +1,23 @@
+uploaded_at: 2026-11-16T20:30:00-03:00
+upload_via: email-editor-beefree
+email_draft_id: 23663681
+landing_page_id: null
+rd_account_id: 975793
+cdn_base: https://email-editor-production.s3.amazonaws.com/images/975793
+note: >-
+  URLs copiadas do editor Beefree do rascunho [TC] Newsletter Piercings - 2026-11-16.
+  Todas responderam HTTP 200 com Content-Length igual ao arquivo local.
+
+files:
+  01-logo-alice-penteado.png: https://email-editor-production.s3.amazonaws.com/images/975793/01-logo-alice-penteado.png
+  02-hero-piercings.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/02-hero-piercings.jpg
+  03-bloco1-piercing-pave-bicolor.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/03-bloco1-piercing-pave-bicolor.jpg
+  04-bloco2-piercing-fancy-yellow.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/04-bloco2-piercing-fancy-yellow.jpg
+  05-bloco3-piercing-caracol.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/05-bloco3-piercing-caracol.jpg
+  06-vitrine-piercing-safira.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/06-vitrine-piercing-safira.jpg
+  07-vitrine-piercing-bicolor-pave.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/07-vitrine-piercing-bicolor-pave.jpg
+  08-vitrine-piercing-esmeraldas.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/08-vitrine-piercing-esmeraldas.jpg
+  09-foto-modelo-esmeraldas.jpg: https://email-editor-production.s3.amazonaws.com/images/975793/09-foto-modelo-esmeraldas.jpg
+  10-icone-frete-gratis.png: https://email-editor-production.s3.amazonaws.com/images/975793/10-icone-frete-gratis.png
+  11-icone-parcelamento.png: https://email-editor-production.s3.amazonaws.com/images/975793/11-icone-parcelamento.png
+  12-logo-alice-penteado-sao-paulo.png: https://email-editor-production.s3.amazonaws.com/images/975793/12-logo-alice-penteado-sao-paulo.png
