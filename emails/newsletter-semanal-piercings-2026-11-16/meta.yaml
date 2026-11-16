@@ -31,7 +31,7 @@ publicacao_rd:
     conta_rd: Alice Penteado (975793)
     status: rascunho criado; 12 imagens enviadas pelo editor Beefree (URLs em imagens-urls.yaml); email-rd.html gerado; falta importar no RD e enviar teste
   importacao_html: manual pelo usuario
-  importar_via_url_raw: https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/master/emails/newsletter-semanal-piercings-2026-11-16/email-rd.html
+  importar_via_url_raw: https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/main/emails/newsletter-semanal-piercings-2026-11-16/email-rd.html
   teste: enviar e-mail de teste (Gmail celular e desktop, Apple Mail, Outlook) antes do disparo
 
 pendencias: []
