@@ -1,5 +1,7 @@
 # Newsletter Semanal — Bloom Sale, 2º envio (16/11/2026)
 
+**Status: pronto para disparo** (HTML importado no RD em 16/11/2026). Falta só o agendamento manual para 23/11/2026.
+
 Reforço da Black Friday. HTML V2 aprovado pela Alice, vindo do Drive (`bloom-sale-envio2.html`).
 
 | Arquivo | Uso |
