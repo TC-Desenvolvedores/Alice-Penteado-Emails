@@ -3,6 +3,7 @@ tipo: newsletter-semanal
 cliente: Alice Penteado
 plataforma: RD Station Marketing
 criado_em: 2026-11-16
+status: pronto para disparo
 origem:
   drive: https://drive.google.com/drive/folders/1mXLxCKA1LdxzrNV6kmU_ci4txD3o8HwS
   html: bloom-sale-envio2.html (V2 aprovada pela Alice)
@@ -31,13 +32,12 @@ publicacao_rd:
     nome: "[TC] Newsletter Bloom Sale Envio 2 - 2026-11-16"
     email_id: 23663730
     conta_rd: Alice Penteado (975793)
-    status: rascunho criado; 3 imagens enviadas no editor Beefree (URLs em imagens-urls.yaml); email-rd.html gerado; falta importar no RD, testar e agendar
-  importacao_html: manual pelo usuario
+    status: pronto para disparo; HTML importado no RD pelo usuário (confirmado em 16/11/2026)
+  importacao_html: feita pelo usuário em 16/11/2026
   importar_via_url_raw: https://raw.githubusercontent.com/TC-Desenvolvedores/Alice-Penteado-Emails/main/emails/newsletter-semanal-bloom-sale-envio2-2026-11-16/email-rd.html
   teste: enviar e-mail de teste (Gmail celular e desktop, Outlook) antes do disparo
 
-pendencias:
-  - "Catálogo no Google Drive precisa estar como 'Qualquer pessoa com o link'."
+pendencias: []
 
 links:
   catalogo: https://drive.google.com/file/d/1jQnGkkOkjeDA8nf-mmBoCxGTjeQh3_nY/view?usp=drive_link
